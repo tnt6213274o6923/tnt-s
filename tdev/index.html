@@ -8,5 +8,43 @@
 <body>
     <a href="https://tntlthl.tk/tdev/" target="_blank" rel="noopener noreferrer"><h1><div style="color: blue ;" class="u">tnt</div><div style="color: greenyellow;" class="e">Dev</div></h1></a>
     <h1 style="text-align: center ;">how new api in the app from tnt</h1>
+    <p>tnt box</p>
+    
+    <textarea id="clipboard-textarea" style="width: 400px; height: 300px;"><iframe src="youtnt box" title="tntbox" >erer</iframe></textarea>
+    <button id="copy-to-clipboard-button">Copy to clipboard</button>
+    <script>
+        // More information at: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+    
+        document.getElementById('copy-to-clipboard-button').addEventListener('click', function () {
+          var
+            textToClipboard = document.querySelector("#clipboard-textarea").value;
+    
+          navigator.clipboard.writeText(textToClipboard).then(function() {
+            alert('The textarea text has been copied to the clipboard!');
+          }, function() {
+            alert('Some error occur while set the text to the clipboard!');
+          });
+        });
+    
+        document.getElementById('cut-to-clipboard-button').addEventListener('click', function () {
+          var
+            textToClipboard = document.querySelector("#clipboard-textarea").value;
+    
+          navigator.clipboard.writeText(textToClipboard).then(function() {
+            document.querySelector("#clipboard-textarea").value = '';
+            alert('The textarea text has been cut to the clipboard!');
+          }, function() {
+            alert('Some error occur while set the text to the clipboard!');
+          });
+        });
+    
+        document.getElementById('paste-from-clipboard-button').addEventListener('click', function () {
+    
+          navigator.clipboard.readText().then(function (clipboardText) {
+            document.getElementById("clipboard-textarea").value = clipboardText;
+            alert('The clipboard text has been pasted into the textarea!');
+          });
+        });
+      </script>
 </body>
 </html>
